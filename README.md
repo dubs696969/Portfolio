@@ -1,2 +1,2 @@
-# My Portfolio
-My first repository for a web page!
+# Portfolio
+My first repository for a web page
