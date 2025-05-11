@@ -35,9 +35,17 @@ h1, h2, h3 {
     color: #444;
 }
 
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
 /* Links */
 a {
-    color: #007BFF;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -61,13 +69,26 @@ button {
     background-color: #007BFF;
     color: #fff;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 20px;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    button {
+        padding: 15px 25px;
+        font-size: 1.2rem;
+    }
 }
 
 /* Navigation */
@@ -75,7 +96,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
+    
+    background-color: var(--light-color);
     padding: 10px;
 }
 
@@ -83,21 +105,35 @@ nav {
     display: none;
     flex-direction: column;
     gap: 10px;
+    background-color: var(--light-color);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .menu-toggle {
     display: block;
     background: none;
     border: none;
-    color: #fff;
+    background-color: var(--background-color);
+    color: var(--primary-color);
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.menu.show {
+    display: flex;
+    
+    
 }
 
 @media (min-width: 768px) {
     .menu {
         display: flex;
         flex-direction: row;
+        gap: 20px;
+        background-color: transparent;
+        padding: 0;
+
     }
 
     .menu-toggle {
@@ -150,4 +186,60 @@ nav {
 img {
     max-width: 100%;
     height: auto;
+    border-radius: 10%;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    header img {
+        width: 150px;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+p {
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--light-color);
+    z-index: 1000;
+    padding: 10px;
 }
